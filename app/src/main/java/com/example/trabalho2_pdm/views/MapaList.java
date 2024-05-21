@@ -1,4 +1,6 @@
 package com.example.trabalho2_pdm.views;
 
-public class MapaList {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MapaList extends AppCompatActivity {
 }

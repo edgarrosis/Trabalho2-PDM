@@ -21,6 +21,6 @@ public abstract class LocalDatabase extends RoomDatabase {
         return INSTANCE;
     }
     public abstract UsuarioDao usuarioModel();
-    public abstract MapaDao marcaModel();
-    public abstract UsuarioMapaDao celularMarcaModel();
+    public abstract MapaDao mapaModel();
+    public abstract UsuarioMapaDao usuarioMapaModel();
 }

@@ -5,6 +5,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
 import com.example.trabalho2_pdm.entities.Usuario;
 
 import java.util.List;
@@ -13,12 +14,14 @@ import java.util.List;
 public interface UsuarioDao {
     @Query("SELECT * FROM Usuario WHERE usuarioID = :id LIMIT 1")
     Usuario getCel(int id);
+    @Query("SELECT * FROM Usuario")
+    List<Usuario> getAll();
     @Update
     void update(Usuario usuario);
     @Insert
     void insertAll(Usuario... usuario);
     @Delete
-    void delete(Usuario celular);
+    void delete(Usuario usuario);
     @Query("SELECT * FROM Usuario WHERE usuarioID = :usuarioID LIMIT 1")
     Usuario getCelByMarca(int usuarioID);
 }
