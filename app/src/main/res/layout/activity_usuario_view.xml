@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtNomeUsuario"
+        android:id="@+id/edtNomeMod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/edtSenhaMod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -42,10 +42,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailMod" />
 
     <EditText
-        android:id="@+id/edtEmailUsuario"
+        android:id="@+id/edtEmailMod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -56,36 +56,26 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNomeUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeMod" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/bttnBackMod"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaMod"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/bttnAddMod"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:srcCompat="@drawable/baseline_edit_24" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintStart_toEndOf="@+id/bttnBackMod"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaMod"
         app:srcCompat="@drawable/baseline_add_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
