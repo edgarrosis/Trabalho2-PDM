@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Trabalho2-PDM</string>
+    <string name="tittle_activity_usuario_list">UsuarioList</string>
+    <string name="modificar_usuario">Modificar Usuário</string>
+    <string name="cadastro_usuario">Cadastro de Usuários</string>
 </resources>

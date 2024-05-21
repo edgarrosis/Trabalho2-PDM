@@ -1,2 +1,4 @@
-package com.example.trabalho2_pdm.entities;public class UsuarioMapa {
+package com.example.trabalho2_pdm.entities;
+
+public class UsuarioMapa {
 }

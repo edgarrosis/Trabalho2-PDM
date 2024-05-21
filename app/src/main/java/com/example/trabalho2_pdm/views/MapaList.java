@@ -1,2 +1,4 @@
-package com.example.trabalho2_pdm.views;public class MapaList {
+package com.example.trabalho2_pdm.views;
+
+public class MapaList {
 }

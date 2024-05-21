@@ -1,2 +1,35 @@
-package com.example.trabalho2_pdm.entities;public class Usuario {
+package com.example.trabalho2_pdm.entities;
+
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+@Entity
+public class Usuario {
+    @PrimaryKey(autoGenerate = true)
+    private int usuarioID;
+    private String nome;
+    private String email;
+    private String senha;
+
+    public Usuario() {    }
+    public Usuario(String nome) {
+        this.nome=nome;
+    }
+    public int getUsuarioID() {
+        return usuarioID;
+    }
+    public void setUsuarioID(int marcaID) {
+        this.usuarioID = marcaID;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    @Override
+    public String toString() {
+        return this.usuarioID + ": " + getNome();
+    }
 }
+
