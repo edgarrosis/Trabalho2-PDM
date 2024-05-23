@@ -12,8 +12,11 @@ public class Usuario {
     private String senha;
 
     public Usuario() {    }
-    public Usuario(String nome) {
+    public Usuario(int usuarioID, String nome, String email, String senha) {
+        this.usuarioID = usuarioID;
         this.nome=nome;
+        this.email = email;
+        this.senha = senha;
     }
     public int getUsuarioID() {
         return usuarioID;
