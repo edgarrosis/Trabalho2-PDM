@@ -8,7 +8,7 @@
     tools:context=".views.CidadeList">
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listCidade"
         android:layout_width="412dp"
         android:layout_height="415dp"
         android:layout_marginStart="1dp"
@@ -16,23 +16,23 @@
         tools:layout_editor_absoluteY="300dp" />
 
     <ImageButton
-        android:id="@+id/backBttnMapas"
+        android:id="@+id/backBttnCidade"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="55dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estadoNome"
+        app:layout_constraintTop_toBottomOf="@+id/edtEstadoNome"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageButton
-        android:id="@+id/addBttnMapas"
+        android:id="@+id/addBttnCidade"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="55dp"
-        app:layout_constraintStart_toEndOf="@+id/backBttnMapas"
-        app:layout_constraintTop_toBottomOf="@+id/estadoNome"
+        app:layout_constraintStart_toEndOf="@+id/backBttnCidade"
+        app:layout_constraintTop_toBottomOf="@+id/edtEstadoNome"
         app:srcCompat="@drawable/baseline_add_24" />
 
     <TextView
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/cidadeNome"
+        android:id="@+id/edtCidadeNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/estadoNome"
+        android:id="@+id/edtEstadoNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -72,6 +72,16 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cidadeNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtCidadeNome" />
+
+    <ImageButton
+        android:id="@+id/addBttnEndereco"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintStart_toEndOf="@+id/addBttnCidade"
+        app:layout_constraintTop_toBottomOf="@+id/edtEstadoNome"
+        app:srcCompat="@drawable/baseline_add_location_alt_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
