@@ -44,20 +44,20 @@ public class UsuarioList extends AppCompatActivity {
         public void onClick(View view) {
             String nomeUsuario = binding.edtNomeUsuario.getText().toString();
             if (nomeUsuario.isEmpty()) {
-                Toast.makeText(UsuarioList.this, "Preencha todos os Campos",
+                Toast.makeText(UsuarioList.this, "Preencha o campo Nome",
                         Toast.LENGTH_SHORT).show();
                 return;
             }
 
             String emailUsuario = binding.edtEmailUsuario.getText().toString();
             if (emailUsuario.isEmpty()) {
-                Toast.makeText(UsuarioList.this, "Preencha todos os Campos",
+                Toast.makeText(UsuarioList.this, "Preencha o campo Email",
                         Toast.LENGTH_SHORT).show();
                 return;
             }
             String senhaUsuario = binding.edtSenhaUsuario.getText().toString();
             if (senhaUsuario.isEmpty()) {
-                Toast.makeText(UsuarioList.this, "Preencha todos os Campos",
+                Toast.makeText(UsuarioList.this, "Preencha o campo Senha",
                         Toast.LENGTH_SHORT).show();
                 return;
             }

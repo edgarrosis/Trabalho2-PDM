@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface UsuarioDao {
     @Query("SELECT * FROM Usuario WHERE usuarioID = :id LIMIT 1")
-    Usuario getCel(int id);
+    Usuario getUsuario(int id);
     @Query("SELECT * FROM Usuario")
     List<Usuario> getAll();
     @Update
@@ -23,5 +23,5 @@ public interface UsuarioDao {
     @Delete
     void delete(Usuario usuario);
     @Query("SELECT * FROM Usuario WHERE usuarioID = :usuarioID LIMIT 1")
-    Usuario getCelByMarca(int usuarioID);
+    Usuario getCityByUsuario(int usuarioID);
 }
