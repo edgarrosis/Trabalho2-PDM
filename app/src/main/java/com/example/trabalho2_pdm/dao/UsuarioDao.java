@@ -22,6 +22,6 @@ public interface UsuarioDao {
     void insert(Usuario usuario);
     @Delete
     void delete(Usuario usuario);
-    @Query("SELECT * FROM Usuario WHERE usuarioID = :usuarioID LIMIT 1")
-    Usuario getCityByUsuario(int usuarioID);
+    @Query("SELECT * FROM Usuario WHERE email = :email AND senha= :senha LIMIT 1")
+    Usuario login(String email, String senha);
 }
