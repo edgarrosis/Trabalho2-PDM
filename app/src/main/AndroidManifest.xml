@@ -13,6 +13,43 @@
         android:theme="@style/Theme.Trabalho2PDM"
         tools:targetApi="31">
         <activity
+            android:name=".views.EnderecoList"
+            android:exported="false" />
+        <activity
+            android:name=".views.CidadeView"
+            android:exported="false" />
+        <activity
+            android:name=".views.CidadeList"
+            android:exported="false" />
+        <activity
+            android:name=".views.UsuarioView"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".views.UsuarioList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".views.MapaList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".views.MapaView"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>

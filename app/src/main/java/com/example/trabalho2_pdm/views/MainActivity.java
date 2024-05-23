@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         binding.bttnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, MapaList.class);
+                Intent it = new Intent(MainActivity.this, CidadeList.class);
                 startActivity(it);
             }
         });
