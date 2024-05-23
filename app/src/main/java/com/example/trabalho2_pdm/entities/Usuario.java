@@ -6,15 +6,14 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
-    private int usuarioID;
+    public int usuarioID;
     private String nome;
     private String email;
     private String senha;
 
     public Usuario() {    }
-    public Usuario(int usuarioID, String nome, String email, String senha) {
-        this.usuarioID = usuarioID;
-        this.nome=nome;
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
@@ -49,7 +48,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return this.usuarioID + ": " + getNome();
+        return getNome();
     }
 }
 

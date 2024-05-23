@@ -25,53 +25,54 @@ public class UsuarioView extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         db = LocalDatabase.getDatabase(getApplicationContext());
-        dbUsuarioID = getIntent().getIntExtra(
-                "USUARIO_SELECIONADO_ID", -1);
+        dbUsuarioID = getIntent().getIntExtra("Usuario_Selecionado_ID", -1);
+
+        if (dbUsuarioID != -1) {
+            getDBUsuario();
+        }
     }
 
     private void getDBUsuario() {
-        dbUsuario = (Usuario) db.usuarioModel().getAll();
-        binding.edtNomeMod.setText(dbUsuario.getNome());
-        binding.edtEmailMod.setText(dbUsuario.getEmail());
-        binding.edtSenhaMod.setText(dbUsuario.getSenha());
+        dbUsuario = db.usuarioModel().getUsuario(dbUsuarioID);
+        if (dbUsuario != null) {
+            binding.edtNomeMod.setText(dbUsuario.getNome());
+            binding.edtEmailMod.setText(dbUsuario.getEmail());
+            binding.edtSenhaMod.setText(dbUsuario.getSenha());
+        }
     }
 
-    public void salvarMarca(View view) {
+    public void salvarUsuario(View view) {
         String nomeUsuario = binding.edtNomeMod.getText().toString();
+        String emailUsuario = binding.edtEmailMod.getText().toString();
+        String senhaUsuario = binding.edtSenhaMod.getText().toString();
+
         if (nomeUsuario.isEmpty()) {
-            Toast.makeText(this, "Adicione um nome.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Adicione um nome.", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        String emailUsuario = binding.edtNomeMod.getText().toString();
         if (emailUsuario.isEmpty()) {
-            Toast.makeText(this, "Adicione um nome.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Adicione um email.", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        String senhaUsuario = binding.edtNomeMod.getText().toString();
         if (senhaUsuario.isEmpty()) {
-            Toast.makeText(this, "Adicione um nome.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Adicione uma senha.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Usuario thisUsuario = new Usuario(dbUsuarioID, nomeUsuario, emailUsuario, senhaUsuario);
+        Usuario thisUsuario = new Usuario(nomeUsuario, emailUsuario, senhaUsuario);
+        thisUsuario.setUsuarioID(dbUsuarioID);
 
         if (dbUsuario != null) {
-            thisUsuario.setUsuarioID(dbUsuarioID);
             db.usuarioModel().update(thisUsuario);
-            Toast.makeText(this, "Marca atualizada com sucesso.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Usuário atualizado com sucesso.", Toast.LENGTH_SHORT).show();
         }
         finish();
     }
 
-    public void excluirMarca(View view) {
+    public void excluirUsuario(View view) {
         new AlertDialog.Builder(this)
-                .setTitle("Exclusão de Marca")
-                .setMessage("Deseja excluir essa marca?")
+                .setTitle("Exclusão de Usuário")
+                .setMessage("Deseja excluir esse usuário?")
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -83,14 +84,11 @@ public class UsuarioView extends AppCompatActivity {
     }
 
     private void excluir() {
-        //if(db.celularModel().getCelByMarca(dbMarcaID)!=null){
-         //   Toast.makeText(this, "Impossível excluir marca com celulares cadastrados", Toast.LENGTH_SHORT).show();
-       // }else {
-            db.usuarioModel().delete(dbUsuario);
-            Toast.makeText(this, "Marca excluída com sucesso", Toast.LENGTH_SHORT).show();
-
+        db.usuarioModel().delete(dbUsuario);
+        Toast.makeText(this, "Usuário excluído com sucesso", Toast.LENGTH_SHORT).show();
         finish();
     }
+
     public void voltar(View view) {
         finish();
     }

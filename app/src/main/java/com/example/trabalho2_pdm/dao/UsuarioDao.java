@@ -19,7 +19,7 @@ public interface UsuarioDao {
     @Update
     void update(Usuario usuario);
     @Insert
-    void insertAll(Usuario... usuario);
+    void insert(Usuario usuario);
     @Delete
     void delete(Usuario usuario);
     @Query("SELECT * FROM Usuario WHERE usuarioID = :usuarioID LIMIT 1")

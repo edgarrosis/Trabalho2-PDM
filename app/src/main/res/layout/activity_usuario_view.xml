@@ -29,8 +29,9 @@
         android:hint="Nome"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/edtSenhaMod"
@@ -43,8 +44,9 @@
         android:hint="Senha"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailMod" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/edtEmailMod"
@@ -57,14 +59,15 @@
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNomeMod" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <ImageButton
         android:id="@+id/bttnBackMod"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:onClick="voltar"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,9 +78,9 @@
         android:id="@+id/bttnConfirmarMod"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:onClick="salvarMarca"
+        android:onClick="salvarUsuario"
         app:layout_constraintStart_toEndOf="@+id/bttnBackMod"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaMod"
         app:srcCompat="@drawable/baseline_done_24" />
@@ -86,11 +89,41 @@
         android:id="@+id/bttnDeletarMod"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:onClick="excluirMarca"
+        android:onClick="excluirUsuario"
         app:layout_constraintStart_toEndOf="@+id/bttnConfirmarMod"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaMod"
         app:srcCompat="@drawable/baseline_close_24" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="Novo Nome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:text="Novo Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeMod" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:text="Nova Senha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailMod" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
