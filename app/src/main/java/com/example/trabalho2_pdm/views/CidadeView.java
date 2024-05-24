@@ -25,7 +25,7 @@ public class CidadeView extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         db = LocalDatabase.getDatabase(getApplicationContext());
-        dbCidadeID = getIntent().getIntExtra("Cidade_Selecionado_ID", -1);
+        dbCidadeID = getIntent().getIntExtra("Cidade_Selecionada_ID", -1);
 
         if (dbCidadeID != -1) {
             getDBCidade();
@@ -33,10 +33,13 @@ public class CidadeView extends AppCompatActivity {
     }
 
     private void getDBCidade() {
-        dbCidade = db.cidadeModel().getCidadeID(dbCidadeID);
+        dbCidade = db.cidadeModel().getCidID(dbCidadeID);
         if (dbCidade != null) {
             binding.edtModCidade.setText(dbCidade.getCidade());
             binding.edtModEstado.setText(dbCidade.getEstado());
+        } else {
+            Toast.makeText(this, "Cidade não encontrada.", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 
@@ -54,32 +57,42 @@ public class CidadeView extends AppCompatActivity {
         }
 
         Cidade thisCidade = new Cidade(cidade, estado);
-        thisCidade.setCidadeID(dbCidadeID);
-
         if (dbCidade != null) {
+            thisCidade.setCidadeID(dbCidadeID);
             db.cidadeModel().update(thisCidade);
             Toast.makeText(this, "Cidade atualizada com sucesso.", Toast.LENGTH_SHORT).show();
+        } else {
+            db.cidadeModel().insert(thisCidade);
+            Toast.makeText(this, "Cidade criada com sucesso.", Toast.LENGTH_SHORT).show();
         }
         finish();
     }
 
     public void excluirCidade(View view) {
-        new AlertDialog.Builder(this)
-                .setTitle("Exclusão de Cidade")
-                .setMessage("Deseja excluir essa cidade?")
-                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        excluir();
-                    }
-                })
-                .setNegativeButton("Não", null)
-                .show();
+        if (dbCidade != null) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Exclusão de Cidade")
+                    .setMessage("Deseja excluir essa cidade?")
+                    .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            excluir();
+                        }
+                    })
+                    .setNegativeButton("Não", null)
+                    .show();
+        } else {
+            Toast.makeText(this, "Cidade não encontrada.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void excluir() {
-        db.cidadeModel().delete(dbCidade);
-        Toast.makeText(this, "Cidade excluída com sucesso", Toast.LENGTH_SHORT).show();
+        if (dbCidade != null) {
+            db.cidadeModel().delete(dbCidade);
+            Toast.makeText(this, "Cidade excluída com sucesso", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Cidade não encontrada.", Toast.LENGTH_SHORT).show();
+        }
         finish();
     }
 
