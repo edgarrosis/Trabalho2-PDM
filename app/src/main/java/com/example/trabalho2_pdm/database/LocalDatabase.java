@@ -15,6 +15,7 @@ import com.example.trabalho2_pdm.entities.Cidade;
 @Database(entities = {Usuario.class, Cidade.class, Endereco.class}, version = 2)
 public abstract class LocalDatabase extends RoomDatabase {
     private static LocalDatabase INSTANCE;
+
     public static LocalDatabase getDatabase(Context context) {
         if(INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),

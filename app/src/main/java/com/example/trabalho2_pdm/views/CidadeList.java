@@ -47,6 +47,20 @@ public class CidadeList extends AppCompatActivity {
                 adicionarCidade(view);
             }
         });
+
+        binding.addBttnEndereco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CidadeList.this, EnderecoList.class);
+                startActivity(it);
+            }
+        });
+    }
+
+    protected void onResume() {
+        super.onResume();
+        edtIntent = new Intent(this, CidadeView.class);
+        preencherCidade();
     }
 
     private void preencherCidade() {
@@ -58,7 +72,7 @@ public class CidadeList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cidade cidadeSelecionado = cidadeList.get(position);
-                edtIntent.putExtra("Usuario_Selecionado_ID", cidadeSelecionado.getCidadeID());
+                edtIntent.putExtra("Cidade_Selecionada_ID", cidadeSelecionado.getCidadeID());
                 startActivity(edtIntent);
             }
         });
@@ -81,10 +95,10 @@ public class CidadeList extends AppCompatActivity {
         if (dbCidade != null) {
             novaCidade.setCidadeID(dbCidadeID);
             db.cidadeModel().update(novaCidade);
-            Toast.makeText(this, "Usuário atualizado com sucesso.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cidade atualizada com sucesso.", Toast.LENGTH_SHORT).show();
         } else {
             db.cidadeModel().insert(novaCidade);
-            Toast.makeText(this, "Usuário cadastrado com sucesso.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cidade cadastrado com sucesso.", Toast.LENGTH_SHORT).show();
         }
         preencherCidade();
     }

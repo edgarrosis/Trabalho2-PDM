@@ -38,4 +38,9 @@ public class Cidade {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String toString() {
+        return getCidade() +" - " + getEstado();
+    }
+
 }
