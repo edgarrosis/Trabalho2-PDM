@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.EnderecoList">
+    tools:context=".views.EnderecoList"
+    tools:layout_editor_absoluteX="-19dp"
+    tools:layout_editor_absoluteY="-170dp">
 
     <TextView
         android:id="@+id/textView5"
@@ -19,74 +21,100 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/edtLongitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
         android:ems="10"
-        android:hint="Endereço"
+        android:hint="Longitude"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/edtLatitude" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/edtLatitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
         android:ems="10"
-        android:hint="Cidade"
+        android:hint="Latitude"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDescEndereco" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="362dp"
+        android:id="@+id/spinnerCidades"
+        android:layout_width="160dp"
         android:layout_height="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:spinnerMode="dialog"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/edtLongitude" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/bttnBackEndereco"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="138dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        android:layout_marginStart="10dp"
+        android:onClick="voltarEndereco"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/bttnAddEndereco"
+        app:layout_constraintTop_toBottomOf="@+id/edtLongitude"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/bttnAddEndereco"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="138dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/spinnerCidades"
+        app:layout_constraintTop_toBottomOf="@+id/edtLongitude"
         app:srcCompat="@drawable/baseline_add_24" />
 
     <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="369dp"
+        android:id="@+id/edtDescEndereco"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:hint="Descrição Endereço"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Endereços Cadastrados"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bttnAddEndereco" />
+
+    <ListView
+        android:id="@+id/listEnderecos"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 </androidx.constraintlayout.widget.ConstraintLayout>

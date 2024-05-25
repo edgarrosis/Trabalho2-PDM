@@ -1,7 +1,6 @@
 package com.example.trabalho2_pdm.entities;
 
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 @Entity
 public class Usuario {
@@ -46,7 +45,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    @Override
     public String toString() {
         return getNome();
     }
