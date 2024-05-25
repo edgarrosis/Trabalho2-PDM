@@ -96,6 +96,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
+        android:onClick="voltar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNovaDescricao"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
@@ -106,6 +107,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
+        android:onClick="salvarEndereco"
         app:layout_constraintStart_toEndOf="@+id/bttnBackModEnd"
         app:layout_constraintTop_toBottomOf="@+id/edtNovaDescricao"
         app:srcCompat="@drawable/baseline_done_24" />
@@ -116,6 +118,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
+        android:onClick="excluirEndereco"
         app:layout_constraintStart_toEndOf="@+id/bttnDoneModEnd"
         app:layout_constraintTop_toBottomOf="@+id/edtNovaDescricao"
         app:srcCompat="@drawable/baseline_close_24" />

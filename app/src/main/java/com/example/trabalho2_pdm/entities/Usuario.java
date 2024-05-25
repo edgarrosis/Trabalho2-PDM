@@ -56,7 +56,7 @@ public class Usuario {
     }
 
     public String toString() {
-        return getNome() + ", " + getEmail() + ", " + getTelefone();
+        return getUsuarioID() + ": " + getNome() + ", " + getEmail() + ", " + getTelefone();
     }
 }
 

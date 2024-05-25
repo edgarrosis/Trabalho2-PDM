@@ -2,6 +2,7 @@ package com.example.trabalho2_pdm.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -67,6 +68,14 @@ public class EnderecoList extends AppCompatActivity {
 
     private void preencherEndereco() {
         cidEndList = db.endCidModel().getAllEndeCid();
+
+        // Verificar se os dados estão corretos
+        for (EnderecoCidade enderecoCidade : cidEndList) {
+            Log.d("EnderecoList", "ID: " + enderecoCidade.getEnderecoID() +
+                    ", Descrição: " + enderecoCidade.getEnderecoDescricao() +
+                    ", Cidade: " + enderecoCidade.getCidadeEndereco());
+        }
+
         ArrayAdapter<EnderecoCidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cidEndList);
         listViewEndereco.setAdapter(adapter);
 
@@ -79,6 +88,7 @@ public class EnderecoList extends AppCompatActivity {
             }
         });
     }
+
 
     private void preencherCidade() {
         cidades = db.cidadeModel().getAll();
