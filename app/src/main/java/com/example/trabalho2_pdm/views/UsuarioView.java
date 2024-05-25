@@ -11,12 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.trabalho2_pdm.database.LocalDatabase;
 import com.example.trabalho2_pdm.databinding.ActivityUsuarioViewBinding;
 import com.example.trabalho2_pdm.entities.Usuario;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class UsuarioView extends AppCompatActivity {
     private LocalDatabase db;
     private ActivityUsuarioViewBinding binding;
     private int dbUsuarioID;
     private Usuario dbUsuario;
+
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +36,16 @@ public class UsuarioView extends AppCompatActivity {
     }
 
     private void getDBUsuario() {
-        dbUsuario = db.usuarioModel().getUsuario(dbUsuarioID);
-        if (dbUsuario != null) {
-            binding.edtNomeMod.setText(dbUsuario.getNome());
-            binding.edtEmailMod.setText(dbUsuario.getEmail());
-            binding.edtSenhaMod.setText(dbUsuario.getSenha());
-        }
+
     }
+
 
     public void salvarUsuario(View view) {
         String nomeUsuario = binding.edtNomeMod.getText().toString();
         String emailUsuario = binding.edtEmailMod.getText().toString();
         String senhaUsuario = binding.edtSenhaMod.getText().toString();
+
+
 
         if (nomeUsuario.isEmpty()) {
             Toast.makeText(this, "Adicione um nome.", Toast.LENGTH_SHORT).show();

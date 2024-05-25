@@ -11,11 +11,14 @@ import com.example.trabalho2_pdm.databinding.ActivityMainBinding;
 import com.example.trabalho2_pdm.entities.Usuario;
 import com.example.trabalho2_pdm.database.LocalDatabase;
 import com.example.trabalho2_pdm.entities.Usuario;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     private LocalDatabase db;
     private ActivityMainBinding binding;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
     }
 
     protected void onResume(){
@@ -48,25 +53,28 @@ public class MainActivity extends AppCompatActivity {
         String email = binding.edtEmailLogin.getText().toString();
         String senha = binding.edtSenhaLogin.getText().toString();
 
-        if (email.isEmpty()) {
+        if (!email.isEmpty()) {
+            if (!senha.isEmpty()) {
+                loginFirebase(email,senha);
+            } else {
+                Toast.makeText(this, "Preencha o campo senha",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }else {
             Toast.makeText(this, "Preencha o email do usuário",
                     Toast.LENGTH_SHORT).show();
-            return;
         }
-        if (senha.isEmpty()) {
-            Toast.makeText(this, "Preencha o campo senha",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        } else {
-            Usuario user = db.usuarioModel().login(email, senha);
-            if(user == null){
-                Toast.makeText(MainActivity.this, "Usuário não cadastrado.",
-                        Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(MainActivity.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                Intent it = new Intent(MainActivity.this, CidadeList.class);
-                startActivity(it);
-            }
-        }
+
+    }
+    private void loginFirebase(String email, String senha){
+        mAuth.signInWithEmailAndPassword(email, senha)
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        startActivity(new Intent(MainActivity.this,CidadeList.class));
+                        Toast.makeText(this,"Logado com sucesso!",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(this,"Erro no Login!",Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
