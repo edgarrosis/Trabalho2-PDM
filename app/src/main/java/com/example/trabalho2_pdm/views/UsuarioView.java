@@ -37,6 +37,7 @@ public class UsuarioView extends AppCompatActivity {
         if (dbUsuario != null) {
             binding.edtNomeMod.setText(dbUsuario.getNome());
             binding.edtEmailMod.setText(dbUsuario.getEmail());
+            binding.edtTelefoneMod.setText(dbUsuario.getTelefone());
             binding.edtSenhaMod.setText(dbUsuario.getSenha());
         }
     }
@@ -44,6 +45,7 @@ public class UsuarioView extends AppCompatActivity {
     public void salvarUsuario(View view) {
         String nomeUsuario = binding.edtNomeMod.getText().toString();
         String emailUsuario = binding.edtEmailMod.getText().toString();
+        String telefoneUsuario = binding.edtTelefoneMod.getText().toString();
         String senhaUsuario = binding.edtSenhaMod.getText().toString();
 
         if (nomeUsuario.isEmpty()) {
@@ -54,12 +56,16 @@ public class UsuarioView extends AppCompatActivity {
             Toast.makeText(this, "Adicione um email.", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (telefoneUsuario.isEmpty()) {
+            Toast.makeText(this, "Adicione um telefone.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (senhaUsuario.isEmpty()) {
             Toast.makeText(this, "Adicione uma senha.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Usuario thisUsuario = new Usuario(nomeUsuario, emailUsuario, senhaUsuario);
+        Usuario thisUsuario = new Usuario(nomeUsuario, emailUsuario, telefoneUsuario, senhaUsuario);
         thisUsuario.setUsuarioID(dbUsuarioID);
 
         if (dbUsuario != null) {

@@ -14,10 +14,8 @@ import java.util.List;
 public interface EnderecoDao {
     @Query("SELECT * FROM Endereco WHERE enderecoID = :id LIMIT 1")
     Endereco getEndereco(int id);
-    @Query("SELECT * FROM Endereco WHERE cidadeIDFK = :id LIMIT 1")
-    Endereco getEndByCidade(int id);
-    @Query("SELECT * FROM Endereco")
-    List<Endereco> getAll();
+    @Query("SELECT * FROM Endereco WHERE cidadeIDFK = :idCidade LIMIT 1")
+    Endereco getEndByCidade(int idCidade);
     @Update
     void update(Endereco endereco);
     @Insert

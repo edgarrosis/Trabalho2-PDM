@@ -6,13 +6,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.trabalho2_pdm.dao.CidadeDao;
+import com.example.trabalho2_pdm.dao.EnderecoCidadeDao;
 import com.example.trabalho2_pdm.dao.EnderecoDao;
 import com.example.trabalho2_pdm.dao.UsuarioDao;
 import com.example.trabalho2_pdm.entities.Endereco;
 import com.example.trabalho2_pdm.entities.Usuario;
 import com.example.trabalho2_pdm.entities.Cidade;
 
-@Database(entities = {Usuario.class, Cidade.class, Endereco.class}, version = 3)
+@Database(entities = {Usuario.class, Cidade.class, Endereco.class, EnderecoCidadeDao.class}, version = 3)
 public abstract class LocalDatabase extends RoomDatabase {
     private static LocalDatabase INSTANCE;
 
@@ -26,4 +27,5 @@ public abstract class LocalDatabase extends RoomDatabase {
     public abstract UsuarioDao usuarioModel();
     public abstract CidadeDao cidadeModel();
     public abstract EnderecoDao enderecoModel();
+    public abstract EnderecoCidadeDao endCidModel();
 }

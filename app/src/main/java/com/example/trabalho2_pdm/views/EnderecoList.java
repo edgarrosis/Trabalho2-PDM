@@ -15,6 +15,7 @@ import com.example.trabalho2_pdm.R;
 import com.example.trabalho2_pdm.database.LocalDatabase;
 import com.example.trabalho2_pdm.databinding.ActivityEnderecoListBinding;
 import com.example.trabalho2_pdm.entities.Cidade;
+import com.example.trabalho2_pdm.entities.EnderecoCidade;
 import com.example.trabalho2_pdm.entities.Endereco;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class EnderecoList extends AppCompatActivity {
     private LocalDatabase db;
     private int dbEnderecoID;
     private Endereco dbEndereco;
-    private List<Endereco> enderecoList;
+    private List<EnderecoCidade> cidEndList;
     private ListView listViewEndereco;
     private List<Cidade> cidades;
     private Spinner spnCidades;
@@ -65,15 +66,15 @@ public class EnderecoList extends AppCompatActivity {
     }
 
     private void preencherEndereco() {
-        enderecoList = db.enderecoModel().getAll();
-        ArrayAdapter<Endereco> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, enderecoList);
+        cidEndList = db.endCidModel().getAllEndeCid();
+        ArrayAdapter<EnderecoCidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cidEndList);
         listViewEndereco.setAdapter(adapter);
 
         listViewEndereco.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Endereco enderecoSelecionado = enderecoList.get(position);
-                edtIntent.putExtra("Endereco_Selecionado_ID", enderecoSelecionado.getEnderecoID());
+                EnderecoCidade cidEndSelecionado = cidEndList.get(position);
+                edtIntent.putExtra("Endereco_Selecionado_ID", cidEndSelecionado.getEnderecoID());
                 startActivity(edtIntent);
             }
         });

@@ -19,21 +19,21 @@
 
     <ListView
         android:id="@+id/listUsuario"
-        android:layout_width="409dp"
-        android:layout_height="380dp"
+        android:layout_width="match_parent"
+        android:layout_height="315dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backBttnUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ImageButton
         android:id="@+id/backBttnUsuario"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaUsuario"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
@@ -42,8 +42,8 @@
         android:id="@+id/addBttnUsuario"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@+id/backBttnUsuario"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaUsuario"
         app:srcCompat="@drawable/baseline_add_24" />
@@ -87,19 +87,34 @@
         android:hint="Senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/edtTelefoneUsuario" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
         android:text="Lista de Usuarios"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/listUsuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backBttnUsuario" />
+
+    <EditText
+        android:id="@+id/edtTelefoneUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:hint="Telefone"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailUsuario" />
 </androidx.constraintlayout.widget.ConstraintLayout>
