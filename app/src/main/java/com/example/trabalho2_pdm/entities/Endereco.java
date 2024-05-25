@@ -1,6 +1,5 @@
 package com.example.trabalho2_pdm.entities;
 
-import androidx.room.Dao;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;

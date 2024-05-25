@@ -6,6 +6,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.trabalho2_pdm.dao.CidadeDao;
+import com.example.trabalho2_pdm.dao.EnderecoCidadeDao;
 import com.example.trabalho2_pdm.dao.EnderecoDao;
 import com.example.trabalho2_pdm.dao.UsuarioDao;
 import com.example.trabalho2_pdm.entities.Endereco;
@@ -27,4 +28,5 @@ public abstract class LocalDatabase extends RoomDatabase {
     public abstract UsuarioDao usuarioModel();
     public abstract CidadeDao cidadeModel();
     public abstract EnderecoDao enderecoModel();
+    public abstract EnderecoCidadeDao endCidModel();
 }

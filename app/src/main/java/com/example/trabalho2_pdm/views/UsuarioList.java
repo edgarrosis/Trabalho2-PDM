@@ -72,6 +72,7 @@ public class UsuarioList extends AppCompatActivity {
     public void adicionarUsuarios(View view) {
         String nome = binding.edtNomeUsuario.getText().toString();
         String email = binding.edtEmailUsuario.getText().toString();
+        String telefone = binding.edtTelefoneUsuario.getText().toString();
         String senha = binding.edtSenhaUsuario.getText().toString();
 
         if (nome.isEmpty()) {
@@ -82,12 +83,16 @@ public class UsuarioList extends AppCompatActivity {
             Toast.makeText(this, "Preencha o email do usuário", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (telefone.isEmpty()) {
+            Toast.makeText(this, "Preencha o email do usuário", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (senha.isEmpty()) {
             Toast.makeText(this, "Preencha a senha do usuário", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Usuario novoUsuario = new Usuario(nome, email, senha);
+        Usuario novoUsuario = new Usuario(nome, email, telefone, senha);
 
         if (dbUsuario != null) {
             novoUsuario.setUsuarioID(dbUsuarioID);

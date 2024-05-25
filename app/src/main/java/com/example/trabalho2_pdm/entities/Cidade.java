@@ -42,5 +42,4 @@ public class Cidade {
     public String toString() {
         return getCidade() +" - " + getEstado();
     }
-
 }
