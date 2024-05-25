@@ -124,6 +124,8 @@ public class EnderecoList extends AppCompatActivity {
 
         if (cidadeSelecionada == null) {
             Toast.makeText(this, "Selecione uma cidade", Toast.LENGTH_SHORT).show();
+            edtIntent = new Intent(this, CidadeList.class);
+            startActivity(edtIntent);
             return;
         }
 

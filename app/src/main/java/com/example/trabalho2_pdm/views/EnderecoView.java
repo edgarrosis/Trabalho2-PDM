@@ -1,6 +1,7 @@
 package com.example.trabalho2_pdm.views;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -36,6 +37,15 @@ public class EnderecoView extends AppCompatActivity {
         if(dbEnderecoID != -1) {
             getDBEndereco();
         }
+        binding.bttnAcessarEndereco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(EnderecoView.this, MapView.class);
+                it.putExtra("Endereco_Selecionado_ID", dbEnderecoID);
+                startActivity(it);
+                finish();
+            }
+        });
     }
 
     private void getDBEndereco() {
