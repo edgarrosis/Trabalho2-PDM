@@ -107,6 +107,7 @@ public class UsuarioList extends AppCompatActivity {
         }
 
 
+
     }
     private void criarConta(String email, String senha){
         mAuth.createUserWithEmailAndPassword(email, senha)

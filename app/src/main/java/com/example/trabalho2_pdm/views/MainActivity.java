@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
+
     }
 
     protected void onResume(){
