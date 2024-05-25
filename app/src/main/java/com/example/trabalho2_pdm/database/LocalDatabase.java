@@ -12,7 +12,7 @@ import com.example.trabalho2_pdm.entities.Endereco;
 import com.example.trabalho2_pdm.entities.Usuario;
 import com.example.trabalho2_pdm.entities.Cidade;
 
-@Database(entities = {Usuario.class, Cidade.class, Endereco.class}, version = 2)
+@Database(entities = {Usuario.class, Cidade.class, Endereco.class}, version = 3)
 public abstract class LocalDatabase extends RoomDatabase {
     private static LocalDatabase INSTANCE;
 
