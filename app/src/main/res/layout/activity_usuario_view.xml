@@ -5,7 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.UsuarioView">
+    tools:context=".views.UsuarioView"
+    android:background="@drawable/fundo">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C3CEF1E3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -13,6 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/carter_one"
+        android:textColor="#2A3E53"
         android:text="@string/modificar_usuario"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +40,11 @@
         android:ems="10"
         android:hint="Nome"
         android:inputType="text"
+        android:drawableEnd="@drawable/baseline_person_24"
+        android:shadowColor="#000000"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +59,11 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:hint="Senha"
+        android:drawableEnd="@drawable/baseline_lock_24"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +79,11 @@
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
+        android:drawableEnd="@drawable/baseline_email_24"
+        android:shadowColor="#000000"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +128,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
         android:text="Novo Nome"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -112,7 +140,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="35dp"
+        android:fontFamily="sans-serif-black"
         android:text="Novo Email"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNomeMod" />
 
@@ -122,7 +152,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="35dp"
+        android:fontFamily="sans-serif-black"
         android:text="Nova Senha"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTelefoneMod" />
 
@@ -132,7 +164,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="35dp"
+        android:fontFamily="sans-serif-black"
         android:text="Novo Telefone"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtEmailMod" />
 
@@ -145,7 +179,13 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:hint="Telefone"
+        android:maxLength="11"
         android:inputType="text"
+        android:drawableEnd="@drawable/baseline_call_24"
+        android:shadowColor="#000000"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />

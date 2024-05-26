@@ -5,7 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.EnderecoView">
+    tools:context=".views.EnderecoView"
+    android:background="@drawable/fundo">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C3CEF1E3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edtLatitudeNova"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
 
     <TextView
         android:id="@+id/textView13"
@@ -13,7 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/carter_one"
         android:text="Modificar Endereço"
+        android:textColor="#2A3E53"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
         android:text="Modificar Latitude"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -38,6 +52,9 @@
         android:ems="10"
         android:hint="Nova Latitude"
         android:inputType="numberDecimal|numberSigned"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -48,7 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
         android:text="Nova Longitude"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtLatitudeNova" />
 
@@ -62,6 +81,9 @@
         android:ems="10"
         android:hint="Nova Longitude"
         android:inputType="numberDecimal|numberSigned"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -76,6 +98,9 @@
         android:ems="10"
         android:hint="Nova Descrição"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -86,7 +111,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
         android:text="Nova Descrição"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtLongitudeNova" />
 

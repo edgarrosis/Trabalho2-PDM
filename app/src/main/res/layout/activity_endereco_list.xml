@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".views.EnderecoList"
     tools:layout_editor_absoluteX="-19dp"
-    tools:layout_editor_absoluteY="-170dp">
+    tools:layout_editor_absoluteY="-170dp"
+    android:background="@drawable/fundo">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C3CEF1E3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
@@ -15,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
+        android:textColor="#2A3E53"
+        android:fontFamily="@font/carter_one"
         android:text="Cadastro Endereço"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +42,10 @@
         android:ems="10"
         android:hint="Longitude"
         android:inputType="numberDecimal|numberSigned"
+        android:shadowColor="#000000"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +61,9 @@
         android:ems="10"
         android:hint="Latitude"
         android:inputType="numberDecimal|numberSigned"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +110,9 @@
         android:ems="10"
         android:hint="Descrição Endereço"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +124,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="#000000"
         android:text="Endereços Cadastrados"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bttnBackEndereco" />

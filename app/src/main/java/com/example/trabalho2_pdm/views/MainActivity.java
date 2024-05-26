@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.trabalho2_pdm.R;
 import com.example.trabalho2_pdm.databinding.ActivityMainBinding;
 import com.example.trabalho2_pdm.entities.Usuario;
 import com.example.trabalho2_pdm.database.LocalDatabase;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        ImageView imageView =findViewById(R.id.logo);
+
         binding.bttnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        Glide.with(this).load(R.drawable.logo).into(imageView);
     }
 
     protected void onResume(){
