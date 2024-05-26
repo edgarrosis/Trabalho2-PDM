@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Glide.with(this).load(R.drawable.logo).into(imageView);
+        Glide.with(this).load(R.drawable.catmaps).into(imageView);
     }
 
     protected void onResume(){
